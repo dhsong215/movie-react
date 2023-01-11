@@ -28,6 +28,7 @@ const Home = () => {
       setLoading(false);
     };
     getMovies();
+    window.scrollTo(0, 0);
     document.body.style.backgroundColor = "#db0d36";
   }, [index]);
 

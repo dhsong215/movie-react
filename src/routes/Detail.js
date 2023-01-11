@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 
 import styles from "../css/Detail.module.css";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -24,7 +23,7 @@ const Detail = () => {
       setLoading(false);
     };
     getDetail();
-    document.body.style.backgroundColor = "#ffffff";
+    document.body.style.backgroundColor = "#000000e8";
   }, [params]);
 
   const Details = () => {
@@ -34,6 +33,7 @@ const Detail = () => {
           <FontAwesomeIcon icon={faArrowLeft} size="3x" />
         </Link>
         <img
+          className={styles.cover_img}
           src={`https://image.tmdb.org/t/p/original${detail.backdrop_path}`}
           alt={detail.backdrop_path}
         />

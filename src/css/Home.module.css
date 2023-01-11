@@ -48,7 +48,7 @@
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, minmax(400px, 600px));
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
   padding: 50px;
   width: 100%;
   grid-auto-rows: 403px;
