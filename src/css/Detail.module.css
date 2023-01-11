@@ -5,6 +5,40 @@
   grid-template-columns: minmax(500px, 700px);
 }
 
+.title {
+  margin-bottom: 10px;
+}
+
+.genre {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.genre * {
+  background-color: rgba(122, 104, 94, 0.8);
+  color: antiquewhite;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0px 5px 0px 0px;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-gap: 10px;
+}
+
+.overview :nth-child(1) {
+  display: flex;
+  background-color: rgb(135, 50, 138);
+  color: rgb(238, 245, 255);
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
 @media screen and (max-width: 650px) {
   .container {
     grid-template-columns: 100%;

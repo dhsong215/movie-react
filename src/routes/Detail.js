@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "../css/Detail.module.css";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const Detail = () => {
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
@@ -11,7 +13,7 @@ const Detail = () => {
     const getDetail = async () => {
       const response = await (
         await fetch(
-          `https://api.themoviedb.org/3/movie/${params.id}?api_key=bbbb0a1d7e005e258af9072da3838e01&language=ko-KR`
+          `https://api.themoviedb.org/3/movie/${params.id}?api_key=${API_KEY}&language=ko-KR`
         )
       ).json();
       setDetail(response);
@@ -27,19 +29,18 @@ const Detail = () => {
           src={`https://image.tmdb.org/t/p/original${detail.backdrop_path}`}
           alt={detail.backdrop_path}
         />
-        <span> </span>
         <div>
-          <h1>{detail.title}</h1>
+          <h1 className={styles.title}>{detail.title}</h1>
           {detail.tagline ? <h3>"{detail.tagline}"</h3> : null}
-          <div>
-            <span>장르 : </span>
+          <div className={styles.genre}>
             {detail.genres.map((item, index) => (
-              <span key={index}>{item.name} </span>
+              <p key={index}>{item.name}</p>
             ))}
           </div>
-          <br></br>
-          <div>
-            <span>줄거리 : {detail.overview}</span>
+          <hr></hr>
+          <div className={styles.overview}>
+            <p>줄거리</p>
+            <p>{detail.overview}</p>
           </div>
           <br></br>
           <div>개봉일 : {detail.release_date}</div>

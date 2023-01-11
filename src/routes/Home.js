@@ -3,36 +3,51 @@ import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import styles from "../css/Home.module.css";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const Home = () => {
-  const [topBarBtn, setTopBarBtn] = useState();
+  const [index, setIndex] = useState("day");
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+
+  const onClickDay = () => {
+    setIndex("day");
+  };
+  const onClickWeek = () => {
+    setIndex("week");
+  };
 
   useEffect(() => {
     const getMovies = async () => {
       const response = await (
         await fetch(
-          "https://api.themoviedb.org/3/trending/movie/day?api_key=bbbb0a1d7e005e258af9072da3838e01"
+          `https://api.themoviedb.org/3/trending/movie/${index}?api_key=${API_KEY}`
         )
       ).json();
       setMovies(response.results);
       setLoading(false);
     };
     getMovies();
-  }, []);
+  }, [index]);
 
   return (
     <div className={styles.container}>
       <nav className={styles.top_bar}>
         <button
-          className={`${styles.top_bar_button} ${styles.top_bar_button1}`}
+          onClick={onClickDay}
+          className={`${styles.top_bar_button} ${
+            index === "day" ? styles.top_bar_selected : null
+          }`}
         >
-          Movie Today
+          Trending Movie Today
         </button>
         <button
-          className={`${styles.top_bar_button} ${styles.top_bar_button2}`}
+          onClick={onClickWeek}
+          className={`${styles.top_bar_button} ${
+            index === "week" ? styles.top_bar_selected : null
+          }`}
         >
-          Movie Weekly
+          Trending Movie Weekly
         </button>
       </nav>
 

@@ -10,7 +10,7 @@
   border-radius: 15px;
 }
 
-.movie div:nth-child(1) a {
+.movie :nth-child(1) {
   width: 100%;
 }
 .movie_img {
