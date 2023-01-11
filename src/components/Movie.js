@@ -1,22 +1,19 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from "../css/Movie.module.css";
 
 const Movie = ({ index, id, imgSrc, imgAlt, title, overview }) => {
   return (
-    <div>
+    <div className={styles.movie} href={`/movie/${id}`}>
       <div>
-        <h2>{index + 1}등</h2>
-        <Link to={`/movie/${id}`}>
-          <img src={imgSrc} alt={imgAlt} />
-        </Link>
+        <img src={imgSrc} alt={imgAlt} className={styles.movie_img} />
       </div>
       <div>
-        <h3>
-          <Link to={`/movie/${id}`}>{title}</Link>
+        <h3 className={styles.movie_title}>
+          #{index + 1} {title}
         </h3>
-        <span>{overview}</span>
+        <span className={styles.movie_overview}>{overview}</span>
       </div>
-      <hr></hr>
     </div>
   );
 };

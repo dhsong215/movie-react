@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  padding: 0px 20px;
+  justify-content: center;
+  grid-template-columns: minmax(500px, 700px);
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    grid-template-columns: 100%;
+  }
+}

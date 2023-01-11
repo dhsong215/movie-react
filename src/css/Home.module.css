@@ -1,0 +1,67 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top_bar {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.top_bar_button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  color: aliceblue;
+}
+
+.top_bar_button1 {
+  background-color: beige;
+  color: brown;
+}
+
+/* .loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}*/
+
+.movies {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, minmax(400px, 600px));
+  grid-gap: 1rem;
+  padding: 50px;
+  width: 100%;
+  grid-auto-rows: 403px;
+  padding-top: 70px;
+}
+
+@media screen and (max-width: 1420px) {
+  .movies {
+    grid-template-columns: 600px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .movies {
+    grid-template-columns: 80%;
+    grid-auto-rows: auto;
+    width: 100%;
+    padding: 50px 10px;
+  }
+}

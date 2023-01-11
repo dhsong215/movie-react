@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import styles from "../css/Detail.module.css";
 
 const Detail = () => {
   const [detail, setDetail] = useState({});
@@ -21,9 +22,9 @@ const Detail = () => {
 
   const Details = () => {
     return (
-      <div>
+      <div className={styles.container}>
         <img
-          src={`https://image.tmdb.org/t/p/w500${detail.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${detail.backdrop_path}`}
           alt={detail.backdrop_path}
         />
         <span> </span>

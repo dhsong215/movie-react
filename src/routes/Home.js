@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
+import styles from "../css/Home.module.css";
 
 const Home = () => {
+  const [topBarBtn, setTopBarBtn] = useState();
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
@@ -19,20 +22,35 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>일간 순위</h1>
+    <div className={styles.container}>
+      <nav className={styles.top_bar}>
+        <button
+          className={`${styles.top_bar_button} ${styles.top_bar_button1}`}
+        >
+          Movie Today
+        </button>
+        <button
+          className={`${styles.top_bar_button} ${styles.top_bar_button2}`}
+        >
+          Movie Weekly
+        </button>
+      </nav>
+
       {loading ? "loading" : null}
-      <div>
+
+      <div className={styles.movies}>
         {movies.map((item, index) => (
-          <Movie
-            key={item.id}
-            index={index}
-            id={item.id}
-            imgSrc={`https://image.tmdb.org/t/p/w200${item.poster_path}`}
-            imgAlt={item.id}
-            title={item.title}
-            overview={item.overview}
-          />
+          <Link to={`/movie/${item.id}`}>
+            <Movie
+              key={item.id}
+              index={index}
+              id={item.id}
+              imgSrc={`https://image.tmdb.org/t/p/w400${item.poster_path}`}
+              imgAlt={item.id}
+              title={item.title}
+              overview={item.overview}
+            />
+          </Link>
         ))}
       </div>
     </div>
