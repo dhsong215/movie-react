@@ -5,6 +5,11 @@
   grid-template-columns: minmax(500px, 700px);
 }
 
+.back_button {
+  position: fixed;
+  top: 10px;
+}
+
 .title {
   margin-bottom: 10px;
 }
@@ -13,6 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: 15px;
 }
 
 .genre * {
@@ -29,6 +35,10 @@
   grid-gap: 10px;
 }
 
+.overview * {
+  margin: 5px 0px;
+}
+
 .overview :nth-child(1) {
   display: flex;
   background-color: rgb(135, 50, 138);
@@ -39,8 +49,21 @@
   height: 30px;
 }
 
+.runtime,
+.release_date {
+  font-weight: 600;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 650px) {
   .container {
     grid-template-columns: 100%;
+  }
+  .overview {
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+  }
+  .overview :first-child {
+    width: 100px;
   }
 }

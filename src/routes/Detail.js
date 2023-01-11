@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+
 import styles from "../css/Detail.module.css";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -20,11 +24,15 @@ const Detail = () => {
       setLoading(false);
     };
     getDetail();
+    document.body.style.backgroundColor = "#ffffff";
   }, [params]);
 
   const Details = () => {
     return (
       <div className={styles.container}>
+        <Link className={styles.back_button} to="/">
+          <FontAwesomeIcon icon={faArrowLeft} size="3x" />
+        </Link>
         <img
           src={`https://image.tmdb.org/t/p/original${detail.backdrop_path}`}
           alt={detail.backdrop_path}
@@ -33,8 +41,8 @@ const Detail = () => {
           <h1 className={styles.title}>{detail.title}</h1>
           {detail.tagline ? <h3>"{detail.tagline}"</h3> : null}
           <div className={styles.genre}>
-            {detail.genres.map((item, index) => (
-              <p key={index}>{item.name}</p>
+            {detail.genres.map((item) => (
+              <p key={item.name}>{item.name}</p>
             ))}
           </div>
           <hr></hr>
@@ -43,9 +51,10 @@ const Detail = () => {
             <p>{detail.overview}</p>
           </div>
           <br></br>
-          <div>개봉일 : {detail.release_date}</div>
-          <div>런타임 : {detail.runtime}분</div>
-          <br></br>
+          <div className={styles.release_date}>
+            개봉일 : {detail.release_date}
+          </div>
+          <div className={styles.runtime}>런타임 : {detail.runtime}분</div>
         </div>
       </div>
     );

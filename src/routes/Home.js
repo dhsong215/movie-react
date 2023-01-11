@@ -28,6 +28,7 @@ const Home = () => {
       setLoading(false);
     };
     getMovies();
+    document.body.style.backgroundColor = "#db0d36";
   }, [index]);
 
   return (
@@ -55,9 +56,12 @@ const Home = () => {
 
       <div className={styles.movies}>
         {movies.map((item, index) => (
-          <Link to={`/movie/${item.id}`}>
+          <Link
+            className={styles.movie_detail}
+            key={item.id}
+            to={`/movie/${item.id}`}
+          >
             <Movie
-              key={item.id}
               index={index}
               id={item.id}
               imgSrc={`https://image.tmdb.org/t/p/w400${item.poster_path}`}

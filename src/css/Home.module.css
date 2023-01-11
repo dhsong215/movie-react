@@ -39,6 +39,10 @@
   font-weight: 300;
 }
 
+.movie_detail {
+  margin-bottom: 40px;
+}
+
 .movies {
   display: grid;
   justify-content: center;
@@ -48,6 +52,7 @@
   width: 100%;
   grid-auto-rows: 403px;
   padding-top: 70px;
+  margin: 0;
 }
 
 @media screen and (max-width: 1420px) {
