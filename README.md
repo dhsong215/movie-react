@@ -1,10 +1,11 @@
-# Getting Started with Create React App
+# 인터넷 강의 보면서 따라 만들어본 영화추천 서비스
 
+노마드코더 니코선생님의 강의를 보며 리액트 기초를 다져봤다.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Used API
 
-In the project directory, you can run:
+TMDB OpenAPI
 
 ### `npm start`
 
