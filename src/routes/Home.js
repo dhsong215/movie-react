@@ -52,7 +52,7 @@ const Home = () => {
         </button>
       </nav>
 
-      {loading ? "loading" : null}
+      {loading ? <div className={styles.loader}>loading</div> : null}
 
       <div className={styles.movies}>
         {movies.map((item, index) => (

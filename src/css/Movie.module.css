@@ -1,7 +1,6 @@
 .movie {
   display: grid;
   background-color: white;
-  margin-bottom: 40px;
   font-weight: 500;
   padding: 30px;
   color: gray;

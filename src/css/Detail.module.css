@@ -1,14 +1,14 @@
 .container {
   display: grid;
-  padding: 0px 20px;
+  padding: 75px 15px;
   justify-content: center;
   grid-template-columns: minmax(500px, 700px);
 }
 
 .back_button {
-  position: fixed;
-  top: 10px;
+  position: absolute;
   color: black;
+  top: 10px;
 }
 
 .title {
