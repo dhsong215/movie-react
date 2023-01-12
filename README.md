@@ -1,5 +1,6 @@
-# 인터넷 강의 보면서 따라 만들어본 영화추천 서비스
+#TMDB trending movie site
 
+인터넷 강의 보면서 따라 만들어본 영화추천 서비스.
 노마드코더 니코선생님의 강의를 보며 리액트 기초를 다져봤다.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
